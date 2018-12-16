@@ -6,6 +6,5 @@ export const LOKALIZACJE: Lokalizacja[]= [
     {nazwa: 'L3'},
     {nazwa: 'L4'},
     {nazwa: 'L5'},
-    {nazwa: 'L6'},
-    {nazwa: 'L7'}
+    {nazwa: 'L6'}
 ]

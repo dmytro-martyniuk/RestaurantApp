@@ -16,8 +16,5 @@ export const STOLIKI: Stolik[]= [
     {lokalizacja:{nazwa: 'L5'}, nazwa: 'S2'},
     {lokalizacja:{nazwa: 'L6'}, nazwa: 'S1'},
     {lokalizacja:{nazwa: 'L6'}, nazwa: 'S2'},
-    {lokalizacja:{nazwa: 'L6'}, nazwa: 'S3'},
-    {lokalizacja:{nazwa: 'L7'}, nazwa: 'S1'},
-    {lokalizacja:{nazwa: 'L7'}, nazwa: 'S2'}
-
+    {lokalizacja:{nazwa: 'L6'}, nazwa: 'S3'}
 ]

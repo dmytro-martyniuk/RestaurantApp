@@ -8,11 +8,12 @@ import { LoginComponent } from './login/login.component';
 import { ManagerComponent } from './managerMain/manager/manager.component';
 import { ManagerZarzadComponent } from './managerMain/manager-zarzad/manager-zarzad.component';
 import { LoginService } from './services/login.service/login.service';
-import { WaiterComponent } from './waiter/waiter.component';
+import { WaiterComponent } from './waiterMain/waiter/waiter.component';
 import { CookieService } from 'ngx-cookie-service';
 import { HttpClientInMemoryWebApiModule } from 'angular-in-memory-web-api';
 import { InMemoryDataService }  from './database/in-memory-data.service';
 import { HttpClientModule } from '@angular/common/http';
+import { WaiterTableComponent } from './waiterMain/waiter-table/waiter-table.component';
 
 @NgModule({
   declarations: [
@@ -20,7 +21,8 @@ import { HttpClientModule } from '@angular/common/http';
     LoginComponent,
     ManagerComponent,
     ManagerZarzadComponent,
-    WaiterComponent
+    WaiterComponent,
+    WaiterTableComponent
   ],
   imports: [
     BrowserModule,
