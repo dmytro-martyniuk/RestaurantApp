@@ -12,6 +12,12 @@ body {
     font-size: 45px;
     margin-top: 100px;
 }
+.errorMessage{
+	color: brown;
+}
+.loading{
+	margin-left: 5px;
+}
 h1{ font-size:28px;}
 h2{ font-size:26px;}
 h3{ font-size:18px;}
@@ -24,9 +30,9 @@ b, strong{ font-weight:bold;}
 a{ text-decoration: none; }
 a:hover{ text-decoration: underline; }
 .left { float:left; }
-.right { float:right; }
+.right { float:to left; }
 .alignleft { float: left; margin-right: 15px; }
-.alignright { float: right; margin-left: 15px; }
+.alignright { float: to left; margin-left: 15px; }
 .clearfix:after,
 form:after {
 	content: ".";
@@ -83,11 +89,11 @@ form:after {
 }
 #content h1:before {
 	background: rgb(126,126,126);
-	background: -moz-linear-gradient(right,  rgba(126,126,126,1) 0%, rgba(255,255,255,1) 100%);
-	background: -webkit-linear-gradient(right,  rgba(126,126,126,1) 0%,rgba(255,255,255,1) 100%);
-	background: -o-linear-gradient(right,  rgba(126,126,126,1) 0%,rgba(255,255,255,1) 100%);
-	background: -ms-linear-gradient(right,  rgba(126,126,126,1) 0%,rgba(255,255,255,1) 100%);
-	background: linear-gradient(right,  rgba(126,126,126,1) 0%,rgba(255,255,255,1) 100%);
+	background: -moz-linear-gradient(to left,  rgba(126,126,126,1) 0%, rgba(255,255,255,1) 100%);
+	background: -webkit-linear-gradient(to left,  rgba(126,126,126,1) 0%,rgba(255,255,255,1) 100%);
+	background: -o-linear-gradient(to left,  rgba(126,126,126,1) 0%,rgba(255,255,255,1) 100%);
+	background: -ms-linear-gradient(to left,  rgba(126,126,126,1) 0%,rgba(255,255,255,1) 100%);
+	background: linear-gradient(to left,  rgba(126,126,126,1) 0%,rgba(255,255,255,1) 100%);
     left: 0;
 }
 #content:after,
