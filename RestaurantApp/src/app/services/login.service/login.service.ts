@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core';
 import { User } from '../../user';
 import { USERS } from '../../users-db';
+import { CookieService } from 'ngx-cookie-service';
 
 @Injectable({
   providedIn: 'root'
@@ -10,7 +11,7 @@ export class LoginService {
   users = USERS;
   foundUser: User;
 
-  constructor() { }
+  constructor(private cookieService: CookieService) { }
 
   login(username: string, password: string): string {
     
@@ -18,6 +19,7 @@ export class LoginService {
     if (!this.foundUser) {
       return 'incorrect';
     } else {
+      this.cookieService.set("user", this.foundUser.role);
       return this.foundUser.role;
     }
 

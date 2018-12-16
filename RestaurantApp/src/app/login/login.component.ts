@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { LoginService } from '../services/login.service/login.service';
 import { Router, ActivatedRoute } from '@angular/router';
 import { FormBuilder, FormGroup, Validators, FormControl } from '@angular/forms';
+import { CookieService } from 'ngx-cookie-service';
 
 @Component({
   selector: 'login',
@@ -23,9 +24,9 @@ export class LoginComponent implements OnInit {
 
   constructor(
     private formBuilder: FormBuilder,
-    private route: ActivatedRoute,
     private router: Router,
-    private loginService: LoginService
+    private loginService: LoginService,
+    private cookieService: CookieService
   ) { }
 
   ngOnInit() {
@@ -36,13 +37,11 @@ export class LoginComponent implements OnInit {
       password: this.passwordCtrl
     });
 
+    this.cookieService.delete("user");
+
     // get return url from route parameters or default to '/'
     this.returnUrl = '/';
   }
-
-  // convenience getter for easy access to form fields
-  get f() { return this.loginForm.controls; }
-
 
   onSubmit() {
 

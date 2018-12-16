@@ -9,6 +9,7 @@ import { ManagerComponent } from './managerMain/manager/manager.component';
 import { ManagerZarzadComponent } from './managerMain/manager-zarzad/manager-zarzad.component';
 import { LoginService } from './services/login.service/login.service';
 import { WaiterComponent } from './waiter/waiter.component';
+import { CookieService } from 'ngx-cookie-service';
 
 @NgModule({
   declarations: [
@@ -23,7 +24,7 @@ import { WaiterComponent } from './waiter/waiter.component';
     ReactiveFormsModule,
     AppRoutingModule
   ],
-  providers: [LoginService],
+  providers: [LoginService, CookieService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
