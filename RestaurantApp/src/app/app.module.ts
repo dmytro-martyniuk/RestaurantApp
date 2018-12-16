@@ -7,6 +7,7 @@ import { AppRoutingModule }     from './app-routing.module';
 import { LoginComponent } from './login/login.component';
 import { LoginService } from './services/login.service/login.service';
 import { WaiterComponent } from './waiter/waiter.component';
+import { CookieService } from 'ngx-cookie-service';
 
 @NgModule({
   declarations: [
@@ -19,7 +20,7 @@ import { WaiterComponent } from './waiter/waiter.component';
     ReactiveFormsModule,
     AppRoutingModule
   ],
-  providers: [LoginService],
+  providers: [LoginService, CookieService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
