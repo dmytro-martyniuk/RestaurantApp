@@ -1,4 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { LoginService } from '../services/login.service/login.service';
+import { Router, ActivatedRoute } from '@angular/router';
+import { FormBuilder, FormGroup, Validators, FormControl } from '@angular/forms';
 
 @Component({
   selector: 'login',
@@ -7,9 +10,70 @@ import { Component, OnInit } from '@angular/core';
 })
 export class LoginComponent implements OnInit {
 
-  constructor() { }
+
+  loginForm: FormGroup;
+  usernameCtrl: FormControl;
+  passwordCtrl: FormControl;
+
+  loading = false;
+  returnUrl: string;
+  error: boolean = false;
+  errorMessage:string='';
+
+
+  constructor(
+    private formBuilder: FormBuilder,
+    private route: ActivatedRoute,
+    private router: Router,
+    private loginService: LoginService
+  ) { }
 
   ngOnInit() {
+    this.usernameCtrl = new FormControl('', Validators.required);
+    this.passwordCtrl = new FormControl('', Validators.required);
+    this.loginForm = this.formBuilder.group({
+      username: this.usernameCtrl,
+      password: this.passwordCtrl
+    });
+
+    // get return url from route parameters or default to '/'
+    this.returnUrl = '/';
+  }
+
+  // convenience getter for easy access to form fields
+  get f() { return this.loginForm.controls; }
+
+
+  onSubmit() {
+
+
+    this.error = false;
+    this.errorMessage= '';
+    //console.log(this.usernameCtrl.value.length);
+    if(this.usernameCtrl.value.length <4){
+      this.error = true;
+      this.errorMessage = 'Username is too short';
+      
+      return;
+    }
+    if(this.passwordCtrl.value.length <4){
+      this.error = true;
+      this.errorMessage = 'Password is too short';
+      return;
+    }
+
+    this.loading = true;
+    setTimeout( () => { this.loading = false; }, 250 );
+    this.returnUrl = this.loginService.login(this.usernameCtrl.value, this.passwordCtrl.value);
+
+    //this.loading = false;
+    if (this.returnUrl == 'incorrect') {
+      this.error=true;
+      this.errorMessage = 'Incorrect username or password';
+    } else {
+      this.router.navigate([this.returnUrl]);
+    }
+
   }
 
 }

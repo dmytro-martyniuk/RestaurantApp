@@ -1,22 +1,22 @@
-<!-- <body> -->
-  <div>
+<div>
     <h1 class="restaurantName">Restauracja "Dwa Konie"</h1>
 
     <div class="container">
       <section id="content">
-        <form action="">
-          <h1>Logowanie</h1>
-          <div>
-            <input type="text" placeholder="Login" required="" id="username" />
-          </div>
-          <div>
-            <input type="password" placeholder="Hasło" required="" id="password" />
-          </div>
-          <div>
-            <input type="submit" value="Log in" />
-          </div>
-        </form><!-- form -->
-      </section><!-- content -->
-    </div><!-- container -->
+        <form [formGroup]="loginForm" (ngSubmit)="onSubmit()">
+            <h1>Logowanie</h1>
+            <h3 *ngIf='error' class="errorMessage">{{errorMessage}}</h3>
+            <div>
+              <input type="text" formControlName="username" placeholder="Login" required="" id="username" />
+            </div>
+            <div>
+              <input type="password" formControlName="password" placeholder="Hasło" required="" id="password" />
+            </div>
+            <div>
+              <input type="submit" value="Log in" />
+              <img class="loading" *ngIf="loading" src="data:image/gif;base64,R0lGODlhEAAQAPIAAP///wAAAMLCwkJCQgAAAGJiYoKCgpKSkiH/C05FVFNDQVBFMi4wAwEAAAAh/hpDcmVhdGVkIHdpdGggYWpheGxvYWQuaW5mbwAh+QQJCgAAACwAAAAAEAAQAAADMwi63P4wyklrE2MIOggZnAdOmGYJRbExwroUmcG2LmDEwnHQLVsYOd2mBzkYDAdKa+dIAAAh+QQJCgAAACwAAAAAEAAQAAADNAi63P5OjCEgG4QMu7DmikRxQlFUYDEZIGBMRVsaqHwctXXf7WEYB4Ag1xjihkMZsiUkKhIAIfkECQoAAAAsAAAAABAAEAAAAzYIujIjK8pByJDMlFYvBoVjHA70GU7xSUJhmKtwHPAKzLO9HMaoKwJZ7Rf8AYPDDzKpZBqfvwQAIfkECQoAAAAsAAAAABAAEAAAAzMIumIlK8oyhpHsnFZfhYumCYUhDAQxRIdhHBGqRoKw0R8DYlJd8z0fMDgsGo/IpHI5TAAAIfkECQoAAAAsAAAAABAAEAAAAzIIunInK0rnZBTwGPNMgQwmdsNgXGJUlIWEuR5oWUIpz8pAEAMe6TwfwyYsGo/IpFKSAAAh+QQJCgAAACwAAAAAEAAQAAADMwi6IMKQORfjdOe82p4wGccc4CEuQradylesojEMBgsUc2G7sDX3lQGBMLAJibufbSlKAAAh+QQJCgAAACwAAAAAEAAQAAADMgi63P7wCRHZnFVdmgHu2nFwlWCI3WGc3TSWhUFGxTAUkGCbtgENBMJAEJsxgMLWzpEAACH5BAkKAAAALAAAAAAQABAAAAMyCLrc/jDKSatlQtScKdceCAjDII7HcQ4EMTCpyrCuUBjCYRgHVtqlAiB1YhiCnlsRkAAAOwAAAAAAAAAAAA==" />
+            </div>
+        </form>
+      </section>
+    </div>
   </div>
-<!-- </body> -->
