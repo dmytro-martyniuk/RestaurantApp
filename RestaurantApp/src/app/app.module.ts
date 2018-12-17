@@ -10,6 +10,9 @@ import { ManagerZarzadComponent } from './managerMain/manager-zarzad/manager-zar
 import { LoginService } from './services/login.service/login.service';
 import { WaiterComponent } from './waiter/waiter.component';
 import { CookieService } from 'ngx-cookie-service';
+import { AngularDateTimePickerModule } from 'angular2-datetimepicker';
+import { ManagerReportComponent } from './managerMain/manager-report/manager-report.component';
+import { ManagerFeedbackComponent } from './managerMain/manager-feedback/manager-feedback.component';
 
 @NgModule({
   declarations: [
@@ -17,12 +20,15 @@ import { CookieService } from 'ngx-cookie-service';
     LoginComponent,
     ManagerComponent,
     ManagerZarzadComponent,
-    WaiterComponent
+    WaiterComponent,
+    ManagerReportComponent,
+    ManagerFeedbackComponent
   ],
   imports: [
     BrowserModule,
     ReactiveFormsModule,
-    AppRoutingModule
+    AppRoutingModule,
+    AngularDateTimePickerModule
   ],
   providers: [LoginService, CookieService],
   bootstrap: [AppComponent]

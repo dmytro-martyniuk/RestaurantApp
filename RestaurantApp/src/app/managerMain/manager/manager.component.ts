@@ -18,4 +18,15 @@ export class ManagerComponent implements OnInit {
       this.router.navigate(['login']);
     }
   }
+
+  logout() {
+    console.log("Wyzow onSubmit na logOut");
+    this.cookieService.delete("user");
+    this.router.navigate(['/']);
+  }
+
+  redirectTo(value: string) {
+      console.log(value);
+      this.router.navigate([value]);
+  }
 }
