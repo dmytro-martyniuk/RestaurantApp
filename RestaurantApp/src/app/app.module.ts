@@ -14,6 +14,7 @@ import { HttpClientInMemoryWebApiModule } from 'angular-in-memory-web-api';
 import { InMemoryDataService }  from './database/in-memory-data.service';
 import { HttpClientModule } from '@angular/common/http';
 import { WaiterTableComponent } from './waiterMain/waiter-table/waiter-table.component';
+import { TableService } from './services/table.service/table.service';
 
 @NgModule({
   declarations: [
@@ -33,7 +34,7 @@ import { WaiterTableComponent } from './waiterMain/waiter-table/waiter-table.com
       InMemoryDataService, { delay: 1500  }
     )
   ],
-  providers: [LoginService, CookieService],
+  providers: [LoginService, CookieService, TableService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
