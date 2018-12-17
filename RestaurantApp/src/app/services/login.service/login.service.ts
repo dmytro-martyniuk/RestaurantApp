@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
-import { User } from '../../user';
-import { USERS } from '../../users-db';
+import { User } from '../../classes/User';
+import { USERS } from '../../database/users-db';
 import { CookieService } from 'ngx-cookie-service';
 
 @Injectable({

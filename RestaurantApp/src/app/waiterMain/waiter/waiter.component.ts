@@ -9,14 +9,14 @@ import { Router } from '@angular/router';
 })
 export class WaiterComponent implements OnInit {
 
+
   constructor(
     private cookieService: CookieService,
     private router: Router) { }
 
   ngOnInit() {
-    if(this.cookieService.get("user")!='waiter'){
+    if (this.cookieService.get("user") != 'waiter') {
       this.router.navigate(['login']);
     }
   }
-
 }

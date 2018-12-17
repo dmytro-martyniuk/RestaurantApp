@@ -1,0 +1,21 @@
+<div class="container">
+  <div class="row">
+    <div class="col-2">
+        <button type="button" routerLink="/login" class="managerButtonBack">Wróć</button>
+    </div>
+    <div class="col-8">
+      <h1 class="managerTitle">Stoliki</h1>
+    </div>
+    <div class="col-2">
+        <button type="button" routerLink="/login" class="managerButtonLogout">Wyloguj</button>
+    </div>
+  </div>
+ 
+
+  <div class="row">
+    <div *ngFor='let t of tables' class="col-4">
+      <a routerLink="/waiter-table/L1" class="managerButton">{{t.nazwa}}</a>
+    </div>
+  </div>
+    
+</div>

@@ -29,7 +29,7 @@
 	-moz-border-radius:6px;
 	-webkit-border-radius:6px;
 	border-radius:6px;
-	border:1px solid #dcdcdc;
+	border:1px solid black;
 	display:inline-block;
 	cursor:pointer;
 	color:#666666;
@@ -80,7 +80,7 @@
 	-moz-border-radius:6px;
 	-webkit-border-radius:6px;
 	border-radius:6px;
-	border:1px solid #dcdcdc;
+	border:1px solid black;
 	display:inline-block;
 	cursor:pointer;
 	color:#666666;
