@@ -15,6 +15,9 @@ import { InMemoryDataService }  from './database/in-memory-data.service';
 import { HttpClientModule } from '@angular/common/http';
 import { WaiterTableComponent } from './waiterMain/waiter-table/waiter-table.component';
 import { TableService } from './services/table.service/table.service';
+import { WaiterZamowienieComponent } from './waiterMain/waiter-zamowienie/waiter-zamowienie.component';
+import { WaiterStartZamowienieComponent } from './waiterMain/waiter-start-zamowienie/waiter-start-zamowienie.component';
+
 
 @NgModule({
   declarations: [
@@ -23,15 +26,17 @@ import { TableService } from './services/table.service/table.service';
     ManagerComponent,
     ManagerZarzadComponent,
     WaiterComponent,
-    WaiterTableComponent
-  ],
+    WaiterTableComponent,
+    WaiterZamowienieComponent,
+    WaiterStartZamowienieComponent
+    ],
   imports: [
     BrowserModule,
     ReactiveFormsModule,
     AppRoutingModule,
     HttpClientModule,
     HttpClientInMemoryWebApiModule.forRoot(
-      InMemoryDataService, { delay: 1500  }
+      InMemoryDataService, { dataEncapsulation: false }
     )
   ],
   providers: [LoginService, CookieService, TableService],

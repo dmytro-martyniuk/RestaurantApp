@@ -1,7 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { Location } from '@angular/common';
-import { Lokalizacja } from 'src/app/classes/Lokalizacja';
 import { TableService } from 'src/app/services/table.service/table.service';
 import { Stolik } from 'src/app/classes/Stolik';
 
@@ -18,12 +17,14 @@ export class WaiterTableComponent implements OnInit {
 
   constructor(
     private route: ActivatedRoute,
+    private router: Router,
     private location: Location,
     private tableService: TableService
   ) { }
 
   ngOnInit() {
     this.setTables();
+    var s = this.tableService.getAllZamowienia();
   }
 
   setTables() {
@@ -33,6 +34,15 @@ export class WaiterTableComponent implements OnInit {
 
   goBack(): void {
     this.location.back();
+  }
+
+  chooseTable(table:Stolik){
+    let s = this.tableService.findZamowienie(table);
+    if(s == true){
+      this.router.navigate(['order-all']);  
+    }else{
+      this.router.navigate(['new-order']);  
+    }
   }
 
 }
