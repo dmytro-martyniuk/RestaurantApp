@@ -1,7 +1,6 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { ReactiveFormsModule }    from '@angular/forms';
-
 import { AppComponent } from './app.component';
 import { AppRoutingModule }     from './app-routing.module';
 import { LoginComponent } from './login/login.component';
@@ -10,6 +9,9 @@ import { ManagerZarzadComponent } from './managerMain/manager-zarzad/manager-zar
 import { LoginService } from './services/login.service/login.service';
 import { WaiterComponent } from './waiterMain/waiter/waiter.component';
 import { CookieService } from 'ngx-cookie-service';
+import { AngularDateTimePickerModule } from 'angular2-datetimepicker';
+import { ManagerReportComponent } from './managerMain/manager-report/manager-report.component';
+import { ManagerFeedbackComponent } from './managerMain/manager-feedback/manager-feedback.component';
 import { HttpClientInMemoryWebApiModule } from 'angular-in-memory-web-api';
 import { InMemoryDataService }  from './database/in-memory-data.service';
 import { HttpClientModule } from '@angular/common/http';
@@ -28,12 +30,16 @@ import { WaiterStartZamowienieComponent } from './waiterMain/waiter-start-zamowi
     WaiterComponent,
     WaiterTableComponent,
     WaiterZamowienieComponent,
-    WaiterStartZamowienieComponent
-    ],
+    WaiterStartZamowienieComponent,
+    ManagerReportComponent,
+    ManagerFeedbackComponent,
+    WaiterTableComponent
+  ],
   imports: [
     BrowserModule,
     ReactiveFormsModule,
     AppRoutingModule,
+    AngularDateTimePickerModule,
     HttpClientModule,
     HttpClientInMemoryWebApiModule.forRoot(
       InMemoryDataService, { dataEncapsulation: false }

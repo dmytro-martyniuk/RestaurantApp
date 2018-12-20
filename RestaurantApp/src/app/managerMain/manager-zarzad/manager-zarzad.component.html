@@ -1,24 +1,26 @@
 <div class="container">
     <div class="row">
-      <div class="col-2">
-      </div>
-      <div class="col-8">
-        <h1 class="managerTitle">Zarządzanie stolikami</h1>
-      </div>
-      <div class="col-2">
-          <button type="button" class="managerButtonLogout">Wróć</button>
-      </div>
+        <div class="col-2">
+            <button (click)="goBack()" class="managerButton">Wróć</button>
+        </div>
+        <div class="col-8">
+            <h1 class="managerTitle">Raporty</h1>
+        </div>
+        <div class="col-2">
+            <button (click)="logOut()" class="managerButton">Wyloguj</button>
+        </div>
     </div>
-   
-  
-   <div class="row">
-        <div class="col-6">
-          
+
+
+    <div class="row" style="margin-top: 50px">
+        <div class="col-3">
+            <h2 class="TerminTitle">Wybierz termin: </h2>
         </div>
-        <div class="col-6">
-            <!-- <button type="button" class="managerButtonLogout">Wyloguj</button> -->
+        <div class="col-8">
+            <angular2-date-picker (onDateSelect)="onDateSelect($event)" [(ngModel)]="date" [settings]="settings">
+            </angular2-date-picker>
         </div>
-      </div>
-  
-    
-  </div>
+    </div>
+
+
+</div>

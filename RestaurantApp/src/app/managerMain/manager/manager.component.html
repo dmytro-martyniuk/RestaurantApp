@@ -6,37 +6,28 @@
       <h1 class="managerTitle">Manager</h1>
     </div>
     <div class="col-2">
-        <button type="button" class="managerButtonLogout">Wyloguj</button>
+        <button (click) = "logout()" class="managerButtonLogout">Wyloguj</button>
+         <!-- <input type="submit" value="Log in" /> -->
     </div>
   </div>
  
 
   <div class="row">
     <div class="col-6">
-      <a href="#" class="managerButton">Raporty</a>
+      <button (click) = "redirectTo('manager/report')" class="managerButton">Raporty</button>
     </div>
     <div class="col-6">
-      <a href="#" class="managerButton">Zarządzanie stolikami</a>
+      <button (click) = "redirectTo('manager/mgmnt')" class="managerButton">Zarządzanie stolikami</button>
     </div>
   </div>
 
   <div class="row">
     <div class="col-6">
-      <a href="#" class="managerButton">Informacja zwrotna</a>
+        <button (click) = "redirectTo('manager/feedback')" class="managerButton">Informacja zwrotna</button>
     </div>
     <div class="col-6">
-      <a href="#" class="managerButton">Menu</a>
+      <button (click) = "redirectTo(value)" class="managerButton">Menu</button>
     </div>
   </div>
-
-  <div class="row">
-      <div class="col-6">
-        
-      </div>
-      <div class="col-6">
-          <!-- <button type="button" class="managerButtonLogout">Wyloguj</button> -->
-      </div>
-    </div>
-
   
 </div>

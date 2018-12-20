@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { Location } from '@angular/common';
+
 
 @Component({
   selector: 'app-waiter-zamowienie',
@@ -7,9 +9,14 @@ import { Component, OnInit } from '@angular/core';
 })
 export class WaiterZamowienieComponent implements OnInit {
 
-  constructor() { }
+  constructor(
+    private location: Location
+  ) { }
 
   ngOnInit() {
   }
 
+  goBack(): void {
+    this.location.back();
+  }
 }
