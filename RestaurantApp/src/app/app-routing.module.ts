@@ -7,6 +7,7 @@ import { ManagerZarzadComponent } from './managerMain/manager-zarzad/manager-zar
 import { ManagerReportComponent } from './managerMain/manager-report/manager-report.component'
 import { ManagerFeedbackComponent } from './managerMain/manager-feedback/manager-feedback.component';
 import { WaiterTableComponent } from './waiterMain/waiter-table/waiter-table.component';
+import { ManagerFeedDetailComponent } from './managerMain/manager-feed-detail/manager-feed-detail.component';
  
  
 const routes: Routes = [
@@ -17,7 +18,8 @@ const routes: Routes = [
   { path: 'manager/mgmnt', component:ManagerZarzadComponent },
   { path: 'manager/report', component:ManagerReportComponent }, 
   { path: 'manager/feedback', component:ManagerFeedbackComponent },
-  { path: 'waiter-table/:lokalizacja', component: WaiterTableComponent}
+  { path: 'waiter-table/:lokalizacja', component: WaiterTableComponent }, 
+  { path: 'manager/feedback/:id ', component: ManagerFeedDetailComponent }
 ];
  
 @NgModule({

@@ -10,4 +10,9 @@ export class FeedbackService {
   constructor() { }
 
   feedbacks = FEEDBACKS;
+  
+  getFeedbacks() :Feedback[] {
+    return this.feedbacks;
+  }
+
 }

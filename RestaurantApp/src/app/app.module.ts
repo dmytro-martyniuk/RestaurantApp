@@ -17,6 +17,9 @@ import { InMemoryDataService }  from './database/in-memory-data.service';
 import { HttpClientModule } from '@angular/common/http';
 import { WaiterTableComponent } from './waiterMain/waiter-table/waiter-table.component';
 import { TableService } from './services/table.service/table.service';
+import { FeedbackService } from './services/feedback.service/feedback.service';
+import { ManagerFeedDetailComponent } from './managerMain/manager-feed-detail/manager-feed-detail.component';
+
 
 @NgModule({
   declarations: [
@@ -27,7 +30,8 @@ import { TableService } from './services/table.service/table.service';
     WaiterComponent,
     ManagerReportComponent,
     ManagerFeedbackComponent,
-    WaiterTableComponent
+    WaiterTableComponent,
+    ManagerFeedDetailComponent
   ],
   imports: [
     BrowserModule,
@@ -39,7 +43,7 @@ import { TableService } from './services/table.service/table.service';
       InMemoryDataService, { delay: 1500  }
     )
   ],
-  providers: [LoginService, CookieService, TableService],
+  providers: [LoginService, CookieService, TableService, FeedbackService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
