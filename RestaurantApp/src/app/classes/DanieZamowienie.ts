@@ -1,8 +1,7 @@
-import { Danie } from './Danie';
 
 export class DanieZamowienie{
     id:number;
-    dania: Danie[];
+    danie_id: number;
     ilosc: number;
     uwaga: Text;
 }

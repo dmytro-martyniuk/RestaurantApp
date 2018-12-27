@@ -19,6 +19,8 @@ import { WaiterTableComponent } from './waiterMain/waiter-table/waiter-table.com
 import { TableService } from './services/table.service/table.service';
 import { FeedbackService } from './services/feedback.service/feedback.service';
 import { ManagerFeedDetailComponent } from './managerMain/manager-feed-detail/manager-feed-detail.component';
+import { WaiterZamowienieComponent } from './waiterMain/waiter-zamowienie/waiter-zamowienie.component';
+import { WaiterStartZamowienieComponent } from './waiterMain/waiter-start-zamowienie/waiter-start-zamowienie.component';
 
 
 @NgModule({
@@ -28,6 +30,9 @@ import { ManagerFeedDetailComponent } from './managerMain/manager-feed-detail/ma
     ManagerComponent,
     ManagerZarzadComponent,
     WaiterComponent,
+    WaiterTableComponent,
+    WaiterZamowienieComponent,
+    WaiterStartZamowienieComponent,
     ManagerReportComponent,
     ManagerFeedbackComponent,
     WaiterTableComponent,
@@ -40,7 +45,7 @@ import { ManagerFeedDetailComponent } from './managerMain/manager-feed-detail/ma
     AngularDateTimePickerModule,
     HttpClientModule,
     HttpClientInMemoryWebApiModule.forRoot(
-      InMemoryDataService, { delay: 1500  }
+      InMemoryDataService, { dataEncapsulation: false }
     )
   ],
   providers: [LoginService, CookieService, TableService, FeedbackService],
