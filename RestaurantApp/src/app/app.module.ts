@@ -21,7 +21,7 @@ import { FeedbackService } from './services/feedback.service/feedback.service';
 import { ManagerFeedDetailComponent } from './managerMain/manager-feed-detail/manager-feed-detail.component';
 import { WaiterZamowienieComponent } from './waiterMain/waiter-zamowienie/waiter-zamowienie.component';
 import { WaiterStartZamowienieComponent } from './waiterMain/waiter-start-zamowienie/waiter-start-zamowienie.component';
-
+import { HttpModule } from '@angular/http';
 
 @NgModule({
   declarations: [
@@ -48,7 +48,7 @@ import { WaiterStartZamowienieComponent } from './waiterMain/waiter-start-zamowi
       InMemoryDataService, { dataEncapsulation: false }
     )
   ],
-  providers: [LoginService, CookieService, TableService, FeedbackService],
+  providers: [LoginService, CookieService, TableService, FeedbackService, InMemoryDataService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
