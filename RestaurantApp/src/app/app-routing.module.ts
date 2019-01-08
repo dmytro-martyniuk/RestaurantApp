@@ -7,6 +7,7 @@ import { ManagerZarzadComponent } from './managerMain/manager-zarzad/manager-zar
 import { ManagerReportComponent } from './managerMain/manager-report/manager-report.component'
 import { ManagerFeedbackComponent } from './managerMain/manager-feedback/manager-feedback.component';
 import { WaiterTableComponent } from './waiterMain/waiter-table/waiter-table.component';
+import { ManagerFeedDetailComponent } from './managerMain/manager-feed-detail/manager-feed-detail.component';
 import { WaiterStartZamowienieComponent } from './waiterMain/waiter-start-zamowienie/waiter-start-zamowienie.component';
 import { WaiterZamowienieComponent } from './waiterMain/waiter-zamowienie/waiter-zamowienie.component';
 import { WaiterAddDishComponent } from './waiterMain/waiter-add-dish/waiter-add-dish.component';
@@ -30,7 +31,9 @@ const routes: Routes = [
   { path: 'addDish', component: WaiterAddDishComponent},
   { path: 'dish-list/:type', component: WaiterDishListComponent},
   { path: 'check', component: WaiterCheckComponent},
-  { path: 'order', component: WaiterOrderFinishComponent}
+  { path: 'order', component: WaiterOrderFinishComponent},
+  { path: 'waiter-table/:lokalizacja', component: WaiterTableComponent }, 
+  { path: 'manager/feedback/:id ', component: ManagerFeedDetailComponent }
 ];
  
 @NgModule({

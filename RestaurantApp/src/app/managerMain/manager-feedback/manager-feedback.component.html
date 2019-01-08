@@ -4,10 +4,24 @@
       <button (click)="goBack()" class="managerButtonBack">Wróć</button>
     </div>
     <div class="col-8">
-      <h1 class="managerTitle">Raporty</h1>
+      <h1 class="managerTitle">Informacja zwrotna</h1>
     </div>
     <div class="col-2">
       <button (click)="logOut()" class="managerButtonBack">Wyloguj</button>
     </div>
   </div>
+
+  <div class="row">
+    <div class="col-2"></div>
+    <div class="col-8">
+      <ul class="list-group" style="margin-top:50px; font-size:17pt; background: #fdfbfbd8; ">
+        <li class="list-group-item" *ngFor="let feedback of allFeedbacks" routerLink="/manager/feedback/{{feedback.id}}">
+          <p>{{feedback.topic}} </p>
+        </li>
+      </ul>
+    </div>
+    <div class="col-2"></div>
+
+  </div>
+
 </div>

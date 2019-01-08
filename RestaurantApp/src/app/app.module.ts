@@ -17,6 +17,8 @@ import { InMemoryDataService }  from './database/in-memory-data.service';
 import { HttpClientModule } from '@angular/common/http';
 import { WaiterTableComponent } from './waiterMain/waiter-table/waiter-table.component';
 import { TableService } from './services/table.service/table.service';
+import { FeedbackService } from './services/feedback.service/feedback.service';
+import { ManagerFeedDetailComponent } from './managerMain/manager-feed-detail/manager-feed-detail.component';
 import { WaiterZamowienieComponent } from './waiterMain/waiter-zamowienie/waiter-zamowienie.component';
 import { WaiterStartZamowienieComponent } from './waiterMain/waiter-start-zamowienie/waiter-start-zamowienie.component';
 import { WaiterAddDishComponent } from './waiterMain/waiter-add-dish/waiter-add-dish.component';
@@ -24,6 +26,7 @@ import { WaiterDishListComponent } from './waiterMain/waiter-dish-list/waiter-di
 import { WaiterCheckComponent } from './waiterMain/waiter-check/waiter-check.component';
 import { WaiterOrderFinishComponent } from './waiterMain/waiter-order-finish/waiter-order-finish.component';
 
+import { HttpModule } from '@angular/http';
 
 @NgModule({
   declarations: [
@@ -41,7 +44,8 @@ import { WaiterOrderFinishComponent } from './waiterMain/waiter-order-finish/wai
     WaiterAddDishComponent,
     WaiterDishListComponent,
     WaiterCheckComponent,
-    WaiterOrderFinishComponent
+    WaiterOrderFinishComponent,
+    ManagerFeedDetailComponent
   ],
   imports: [
     BrowserModule,
@@ -53,7 +57,7 @@ import { WaiterOrderFinishComponent } from './waiterMain/waiter-order-finish/wai
       InMemoryDataService, { dataEncapsulation: false }
     )
   ],
-  providers: [LoginService, CookieService, TableService],
+  providers: [LoginService, CookieService, TableService, FeedbackService, InMemoryDataService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
