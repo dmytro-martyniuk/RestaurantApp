@@ -21,6 +21,11 @@ import { FeedbackService } from './services/feedback.service/feedback.service';
 import { ManagerFeedDetailComponent } from './managerMain/manager-feed-detail/manager-feed-detail.component';
 import { WaiterZamowienieComponent } from './waiterMain/waiter-zamowienie/waiter-zamowienie.component';
 import { WaiterStartZamowienieComponent } from './waiterMain/waiter-start-zamowienie/waiter-start-zamowienie.component';
+import { WaiterAddDishComponent } from './waiterMain/waiter-add-dish/waiter-add-dish.component';
+import { WaiterDishListComponent } from './waiterMain/waiter-dish-list/waiter-dish-list.component';
+import { WaiterCheckComponent } from './waiterMain/waiter-check/waiter-check.component';
+import { WaiterOrderFinishComponent } from './waiterMain/waiter-order-finish/waiter-order-finish.component';
+
 import { HttpModule } from '@angular/http';
 import { ManagerAddFeedbackComponent } from './managerMain/manager-add-feedback/manager-add-feedback.component';
 
@@ -38,7 +43,12 @@ import { ManagerAddFeedbackComponent } from './managerMain/manager-add-feedback/
     ManagerFeedbackComponent,
     WaiterTableComponent,
     ManagerFeedDetailComponent,
-    ManagerAddFeedbackComponent
+    ManagerAddFeedbackComponent,
+    WaiterAddDishComponent,
+    WaiterDishListComponent,
+    WaiterCheckComponent,
+    WaiterOrderFinishComponent,
+    ManagerFeedDetailComponent
   ],
   imports: [
     BrowserModule,

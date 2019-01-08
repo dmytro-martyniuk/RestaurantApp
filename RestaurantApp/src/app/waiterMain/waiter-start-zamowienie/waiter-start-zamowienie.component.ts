@@ -2,7 +2,6 @@ import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { Location } from '@angular/common';
 import { TableService } from 'src/app/services/table.service/table.service';
-import { routerNgProbeToken } from '@angular/router/src/router_module';
 
 @Component({
   selector: 'app-waiter-start-zamowienie',
@@ -18,7 +17,6 @@ export class WaiterStartZamowienieComponent implements OnInit {
   ) { }
 
   ngOnInit() {
-
   }
   startOrder(){
     this.tableService.startNewOrder();

@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Location } from '@angular/common';
+import { TableService } from 'src/app/services/table.service/table.service';
+import { Router } from '@angular/router';
 
 
 @Component({
@@ -10,7 +12,7 @@ import { Location } from '@angular/common';
 export class WaiterZamowienieComponent implements OnInit {
 
   constructor(
-    private location: Location
+    private location: Location, public tableService: TableService, private router: Router
   ) { }
 
   ngOnInit() {
@@ -18,5 +20,17 @@ export class WaiterZamowienieComponent implements OnInit {
 
   goBack(): void {
     this.location.back();
+  }
+
+  addDanie():void {
+    this.router.navigate(['addDish']);
+  }
+
+  check(): void{
+    this.router.navigate(['check']);
+  }
+
+  openOrder(): void{
+    this.router.navigate(['order']);
   }
 }
