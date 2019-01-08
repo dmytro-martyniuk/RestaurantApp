@@ -1,0 +1,48 @@
+<div class="container">
+  <div class="row">
+    <div class="col-2">
+        <button type="button" (click)="goBack()" class="managerButtonBack">Wróć</button>
+    </div>
+    <div class="col-8">
+      <h1 class="managerTitle">Menu</h1>
+    </div>
+    <div class="col-2">
+        <button type="button" routerLink="/login" class="managerButtonLogout">Wyloguj</button>
+    </div>
+  </div>
+ <br><br><br><br>
+  <div class="row">
+      <div class="col-12">
+          
+      </div>
+  </div>
+
+  <div class="row">
+    <div class="col-md-6">
+        <a (click)="openZupa()" class="managerButton">Zupy</a>
+    </div>
+    <div class="col-md-6">
+      <a (click)="openGlowne()" class="managerButton">Główne dania</a>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="col-md-6">
+        <a (click)="openDeser()" class="managerButton">Desery</a>
+    </div>
+    <div class="col-md-6">
+      <a (click)="openNapoj()" class="managerButton">Napoje</a>
+    </div>
+  </div>
+
+  <div class="row">
+      <div class="col-md-3">
+      </div>
+      <div class="col-md-6">
+        <a (click)="openSpecjalne()" class="managerButton">Dania specjalne</a>
+      </div>
+      <div class="col-md-3">
+      </div>
+  </div>
+    
+</div>

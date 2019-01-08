@@ -30,8 +30,14 @@ export class TableService {
 
   findZamowienie(table: Stolik):boolean{
     this.currentTable = table;
-    return (this.allZamowienia.filter(s=> (JSON.stringify(s.stolik) == JSON.stringify(table) && s.widacStolik == true)
-    )).length>0;
+    if( (this.allZamowienia.filter(s=> (JSON.stringify(s.stolik) == JSON.stringify(table) 
+    && s.widacStolik == true))).length>0){
+      this.currentOrder = this.allZamowienia.find(s=> (JSON.stringify(s.stolik) == JSON.stringify(table) 
+      && s.widacStolik == true));
+      return true;
+    }else{
+      return false;
+    }
   }
 
   getAllZamowienia(){

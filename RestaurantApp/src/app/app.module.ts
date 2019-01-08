@@ -19,6 +19,10 @@ import { WaiterTableComponent } from './waiterMain/waiter-table/waiter-table.com
 import { TableService } from './services/table.service/table.service';
 import { WaiterZamowienieComponent } from './waiterMain/waiter-zamowienie/waiter-zamowienie.component';
 import { WaiterStartZamowienieComponent } from './waiterMain/waiter-start-zamowienie/waiter-start-zamowienie.component';
+import { WaiterAddDishComponent } from './waiterMain/waiter-add-dish/waiter-add-dish.component';
+import { WaiterDishListComponent } from './waiterMain/waiter-dish-list/waiter-dish-list.component';
+import { WaiterCheckComponent } from './waiterMain/waiter-check/waiter-check.component';
+import { WaiterOrderFinishComponent } from './waiterMain/waiter-order-finish/waiter-order-finish.component';
 
 
 @NgModule({
@@ -33,7 +37,11 @@ import { WaiterStartZamowienieComponent } from './waiterMain/waiter-start-zamowi
     WaiterStartZamowienieComponent,
     ManagerReportComponent,
     ManagerFeedbackComponent,
-    WaiterTableComponent
+    WaiterTableComponent,
+    WaiterAddDishComponent,
+    WaiterDishListComponent,
+    WaiterCheckComponent,
+    WaiterOrderFinishComponent
   ],
   imports: [
     BrowserModule,
