@@ -29,14 +29,19 @@ export class ManagerFeedbackComponent implements OnInit {
     allFeedbacks: Feedback [];
 
   ngOnInit() {
-    this.allFeedbacks = this.feedbackService.getFeedbacks();
+    //this.allFeedbacks = this.feedbackService.getFeedbacks();
     //this.feedbacks = this.inMemoryDataService.createDb().feedbacks;
-    // this.getAllFeedbacks();
-     this. getInfo();
+    //this.getAllFeedbacks();
+    this.allFeedbacks = this.feedbackService.allFeedbacks;
+     //this. getInfo();
   }
 
   logOut() {
     this.router.navigate(['/']);
+  }
+
+  goToAddFeedback() {
+    this.router.navigate(['manager/addfeednack'])
   }
 
   goBack() {
@@ -44,6 +49,7 @@ export class ManagerFeedbackComponent implements OnInit {
   } 
 
   getInfo() {
+    console.log("getInfo")
     console.log(this.allFeedbacks);
   }
 

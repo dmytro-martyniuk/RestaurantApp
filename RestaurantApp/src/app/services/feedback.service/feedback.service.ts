@@ -1,41 +1,57 @@
 import { Injectable } from '@angular/core';
 import { Feedback } from '../../classes/feedback';
 import { FEEDBACKS } from '../../database/feedback-db';
-import { defaultScheduler } from '@angular/core/src/render3/util';
+import { Observable } from 'rxjs';
+import { HttpClient } from '@angular/common/http';
+import { map, filter, catchError, tap } from 'rxjs/operators';
+import { of } from 'rxjs/internal/observable/of';
 
 @Injectable({
   providedIn: 'root'
 })
 export class FeedbackService {
 
-  constructor() { }
+  constructor(
+    private http: HttpClient
+  ) { }
 
   feedbacks = FEEDBACKS;
   length:number;
   newFeedback:Feedback;
+  feedbackURL :string  = "api/feedbacks";
+  allFeedbacks: Feedback [];
   
   ngOnInit() {
+    console.log("init in service");
 
   }
-  getFeedbacks() :Feedback[] {
-    this.length = this.feedbacks.length;
-    return this.feedbacks;
+
+  
+  getAllFeedbacks() {
+    this.getFeedbacks().subscribe(
+      data => {this.allFeedbacks = data}
+    )
   }
 
-  removefeedback(id:number ) {
-    //const index:number = this.feedbacks.indexOf()
-    this.feedbacks.slice(id,1);
+
+  getFeedbacks(): Observable<Feedback[]> {
+    return this.http.get<Feedback[]>(this.feedbackURL)
+    .pipe(
+      tap(_ => console.log('fetched data')),
+      catchError(this.handleError('getAllFeedbacks', []))
+    ); 
   }
 
-  addFeedback(type:string, topic: string, desc: string, personData: string) {
-    this.newFeedback = new Feedback();
-    this.newFeedback.type = type;
-    this.newFeedback.topic = topic;
-    this.newFeedback.description = desc;
-    this.newFeedback.personData = personData;
-    this.newFeedback.id = this.feedbacks.length +1;
-    this.feedbacks.push(this.newFeedback);
-    FEEDBACKS.push(this.newFeedback);
+
+  private handleError<T> (operation = 'operation', result?: T) {
+    return (error: any): Observable<T> => {
+ 
+      // TODO: send the error to remote logging infrastructure
+      console.error(error); // log to console instead
+ 
+      // Let the app keep running by returning an empty result.
+      return of(result as T);
+    };
   }
 
 }

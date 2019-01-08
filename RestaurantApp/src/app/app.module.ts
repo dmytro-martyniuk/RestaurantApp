@@ -22,6 +22,7 @@ import { ManagerFeedDetailComponent } from './managerMain/manager-feed-detail/ma
 import { WaiterZamowienieComponent } from './waiterMain/waiter-zamowienie/waiter-zamowienie.component';
 import { WaiterStartZamowienieComponent } from './waiterMain/waiter-start-zamowienie/waiter-start-zamowienie.component';
 import { HttpModule } from '@angular/http';
+import { ManagerAddFeedbackComponent } from './managerMain/manager-add-feedback/manager-add-feedback.component';
 
 @NgModule({
   declarations: [
@@ -36,7 +37,8 @@ import { HttpModule } from '@angular/http';
     ManagerReportComponent,
     ManagerFeedbackComponent,
     WaiterTableComponent,
-    ManagerFeedDetailComponent
+    ManagerFeedDetailComponent,
+    ManagerAddFeedbackComponent
   ],
   imports: [
     BrowserModule,

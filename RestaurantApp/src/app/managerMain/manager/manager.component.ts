@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { CookieService } from 'ngx-cookie-service';
 import { Router } from '@angular/router';
+import { FeedbackService } from 'src/app/services/feedback.service/feedback.service';
+
 
 @Component({
   selector: 'manager',
@@ -11,12 +13,15 @@ export class ManagerComponent implements OnInit {
 
   constructor(
     private cookieService: CookieService,
-    private router: Router) { }
+    private router: Router,
+    private feedbackservice: FeedbackService) { }
 
   ngOnInit() {
     if(this.cookieService.get("user")!='manager'){
       this.router.navigate(['login']);
     }
+
+    this.feedbackservice.getAllFeedbacks();
   }
 
   logout() {

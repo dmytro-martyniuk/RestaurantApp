@@ -46,7 +46,6 @@ export class TableService {
         tap(_ => console.log('fetched data')),
         catchError(this.handleError('getAllZamowienie', []))
       );
-
   }
 
   private handleError<T> (operation = 'operation', result?: T) {
