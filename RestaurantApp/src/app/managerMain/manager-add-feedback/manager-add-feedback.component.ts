@@ -1,4 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
+import { Location, NgForOf } from '@angular/common';
+import { NgForm } from '@angular/forms'
 
 @Component({
   selector: 'manager/addfeednack',
@@ -7,9 +10,28 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ManagerAddFeedbackComponent implements OnInit {
 
-  constructor() { }
+  constructor(
+    private location: Location, 
+    private router: Router ) { }
 
   ngOnInit() {
+  }
+
+  logOut() {
+    this.router.navigate(['/']);
+  }
+
+  goToAddFeedback() {
+    this.router.navigate(['manager/addfeednack'])
+  }
+
+  goBack() {
+    this.location.back();
+  } 
+
+  onClickSubmit(feedbackForm: NgForm): void {
+    console.log(feedbackForm.value);
+      
   }
 
 }

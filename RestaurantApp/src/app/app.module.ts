@@ -28,6 +28,7 @@ import { WaiterOrderFinishComponent } from './waiterMain/waiter-order-finish/wai
 
 import { HttpModule } from '@angular/http';
 import { ManagerAddFeedbackComponent } from './managerMain/manager-add-feedback/manager-add-feedback.component';
+import { FormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -56,6 +57,7 @@ import { ManagerAddFeedbackComponent } from './managerMain/manager-add-feedback/
     AppRoutingModule,
     AngularDateTimePickerModule,
     HttpClientModule,
+    FormsModule,
     HttpClientInMemoryWebApiModule.forRoot(
       InMemoryDataService, { dataEncapsulation: false }
     )

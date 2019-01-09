@@ -4,10 +4,50 @@
       <button (click)="goBack()" class="managerButtonBack">Wróć</button>
     </div>
     <div class="col-8">
-      <h1 class="managerTitle">Dodaj inf</h1>
+      <h1 class="managerTitle">Dodaj informację</h1>
     </div>
     <div class="col-2">
       <button (click)="logOut()" class="managerButtonBack">Wyloguj</button>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="col-2">
+    </div>
+
+    <div class="col-8">
+      <form #feedbackForm = "ngForm" (ngSubmit)="onClickSubmit(feedbackForm)">
+        <div class="form-group">
+          <label for="name">Typ</label>
+            <select class="form-control" name="type" id="type" [(ngModel)]="type">
+            <option>Uwaga</option>
+            <option>Skarga</option>
+          </select>
+        </div>
+
+        <div class="form-group">
+          <label for="alterEgo">Temat</label>
+          <input type="text" class="form-control" id="alterEgo" name="topic" id="type" [(ngModel)]="topic">
+        </div>
+
+        <div class="form-group">
+          <label for="alterEgo">Opis</label>
+          <textarea class="form-control" id="exampleTextarea" rows="3" name="desc" [(ngModel)]="desc"></textarea>
+        </div>
+
+        <div class="form-group">
+          <label for="alterEgo">Kontakt</label>
+          <input type="text" class="form-control" id="alterEgoq" name="contact" [(ngModel)]="contact">
+        </div>
+
+        <button type="submit" class="btn btn-success">Submit</button>
+
+      </form>
+
+      {{feedbackForm.value | json }}
+    </div>
+
+    <div class="col-2">
     </div>
   </div>
 </div>
