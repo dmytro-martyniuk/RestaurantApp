@@ -7,8 +7,27 @@ import { Zamowienie } from '../classes/Zamowienie';
 export class InMemoryDataService  implements InMemoryDbService {
   createDb() {
     const dania = [
-      { id: 1, typ: TypDania["Zupa"], nazwa: 'Barsz ukraiński', opis:'Fajny barszczyk', cena: '7 zl', skladniki: ['Mrachewka', 'Buraki', 'Ziemniaki'] },
-      { id: 2, typ: TypDania["Zupa"], nazwa: 'Zupa pomidorowa', opis:'Fajna zupa', cena: '5 zl', skladniki: ['Mrachewka', 'Buraki', 'Ziemniaki'] }
+      { id: 1, typ: "Zupa", nazwa: 'Barszcz ukraiński', opis:'Fajny barszczyk', cena: '17 zl', skladniki: ['Mrachewka', ' Buraki', ' Ziemniaki'] },
+      { id: 2, typ: "Zupa", nazwa: 'Zupa pomidorowa', opis:'Fajna zupa', cena: '15 zl', skladniki: ['Mrachewka', ' Buraki', ' Ziemniaki'] },
+      { id: 3, typ: "Zupa", nazwa: 'Zupa ogórkowa', opis:'Fajnr ogórki', cena: '15 zl', skladniki: ['Ogórki', ' Kapusta', ' Cebula'] },
+      { id: 4, typ: "Glowne", nazwa: 'Kluski z karkówką', opis:'Pyszne kluseczki', cena: '45 zl', skladniki: ['Koperek', ' Karkówka', ' Kluski'] },
+      { id: 5, typ: "Glowne", nazwa: 'Placek węgierski', opis:'Świeżutki placek', cena: '40 zl', skladniki: ['Placek', ' Gulasz'] },
+      { id: 6, typ: "Glowne", nazwa: 'Ziemniaki ze schabowym', opis:'Pyszniutki schab', cena: '45 zl', skladniki: ['Ziemniaki', ' Schabowy', ' Koperek'] },
+      { id: 7, typ: "Glowne", nazwa: 'Łosoś z ryżem', opis:'Łosoś jeszcze wczoraj pływał', cena: '55 zl', skladniki: ['Łosoś', ' Ryż', ' Buraczki'] },
+      { id: 8, typ: "Deser", nazwa: 'Strudel z jabłkami', opis:'Fajny strudel', cena: '15 zl', skladniki: ['Strudel', ' Jabka'] },
+      { id: 9, typ: "Deser", nazwa: 'Sernik wspomnienie', opis:'Fajny sernik', cena: '12 zl', skladniki: ['Ser', ' Banan', ' Śmietana'] },
+      { id: 10, typ: "Deser", nazwa: 'Tort confetti', opis:'Słodzitki torcik', cena: '19 zl', skladniki: ['Orzechi', ' Sliwki', ' Śmietana'] },
+      { id: 11, typ: "Deser", nazwa: 'Ciasto z morelami', opis:'Fajne cisto', cena: '16 zl', skladniki: ['Orzechi', ' Morela', ' Ananas'] },
+      { id: 12, typ: "Napoj", nazwa: 'Kawa', opis:'Fajna kawa', cena: '15 zl', skladniki: ['Kawa', ' Cukier'] },
+      { id: 13, typ: "Napoj", nazwa: 'Herbata', opis:'Fajna herbata', cena: '12 zl', skladniki: ['Herbata', ' Cukier'] },
+      { id: 14, typ: "Napoj", nazwa: 'Sok', opis:'Fajny sok', cena: '13 zl', skladniki: ['Pomarańcz', ' Banan', ' Gruszka'] },
+      { id: 15, typ: "Napoj", nazwa: 'Woda', opis:'Fajna woda', cena: '5 zl', skladniki: ['Woda'] },
+      { id: 16, typ: "Napoj", nazwa: 'Wódka', opis:'Fajna wódka', cena: '95 zl', skladniki: ['Wódka Dwa Konie',] },
+      { id: 17, typ: "Specjalne", nazwa: 'Kurczak w końskim sosie', opis:'Fajny', cena: '65 zl', skladniki: ['Kurczak', ' Sos koński', ' Ziemniaki'] },
+      { id: 18, typ: "Specjalne", nazwa: 'Świeże brokuły', opis:'Świeżutkie brokuły', cena: '25 zl', skladniki: ['Brokuły'] }
+
+
+
     ];
     const daniaZam = [
       {id:1, danie_id: 1, ilosc:1, uwaga: 'Bez soli'}

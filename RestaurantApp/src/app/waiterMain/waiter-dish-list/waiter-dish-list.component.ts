@@ -1,5 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import { Router, ActivatedRoute } from '@angular/router';
+import { TableService } from 'src/app/services/table.service/table.service';
+import { Danie } from 'src/app/classes/Danie';
+import { Location } from '@angular/common';
+
 
 @Component({
   selector: 'app-waiter-dish-list',
@@ -8,13 +12,24 @@ import { Router, ActivatedRoute } from '@angular/router';
 })
 export class WaiterDishListComponent implements OnInit {
 
-  dishType: String;
-  constructor(    private route: ActivatedRoute,
-    private router: Router) { }
+  dishType: String="adasd";
+  dania: Danie[];
+
+  constructor(private location: Location, private route: ActivatedRoute,
+    private router: Router, public tableService: TableService) { }
 
   ngOnInit() {
     this.dishType = this.route.snapshot.paramMap.get('type');
-    console.log(this.dishType);
+    this.dania = this.tableService.getDishesByType(this.dishType);
+  }
+
+  goBack(): void {
+    this.location.back();
+  }
+
+  addDish(id: number){
+    console.log(id);
+    this.router.navigate(['dish-popup/'+id]);
   }
 
 }

@@ -25,8 +25,7 @@ import { WaiterAddDishComponent } from './waiterMain/waiter-add-dish/waiter-add-
 import { WaiterDishListComponent } from './waiterMain/waiter-dish-list/waiter-dish-list.component';
 import { WaiterCheckComponent } from './waiterMain/waiter-check/waiter-check.component';
 import { WaiterOrderFinishComponent } from './waiterMain/waiter-order-finish/waiter-order-finish.component';
-
-import { HttpModule } from '@angular/http';
+import { WaiterPopupComponent } from './waiterMain/waiter-popup/waiter-popup.component';
 
 @NgModule({
   declarations: [
@@ -45,7 +44,8 @@ import { HttpModule } from '@angular/http';
     WaiterDishListComponent,
     WaiterCheckComponent,
     WaiterOrderFinishComponent,
-    ManagerFeedDetailComponent
+    ManagerFeedDetailComponent,
+    WaiterPopupComponent
   ],
   imports: [
     BrowserModule,
