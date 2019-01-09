@@ -156,18 +156,13 @@
 	position:relative;
 	top:1px;
 }
-
-.list-group{
-	margin-top: 8%;
-	font-size: 15px;
-	cursor: pointer;
+form{
+	margin-top: 1%;
+	font-size: 20px;
 }
-.list-group p{
-	font-size: 14px;
+form-group{
+
 }
 
-.list-group h4 small{
-	float: right;
-	font-size: 40px;
-}
+
 
