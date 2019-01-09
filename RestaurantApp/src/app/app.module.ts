@@ -27,6 +27,9 @@ import { WaiterCheckComponent } from './waiterMain/waiter-check/waiter-check.com
 import { WaiterOrderFinishComponent } from './waiterMain/waiter-order-finish/waiter-order-finish.component';
 import { WaiterPopupComponent } from './waiterMain/waiter-popup/waiter-popup.component';
 
+import { HttpModule } from '@angular/http';
+import { ManagerAddFeedbackComponent } from './managerMain/manager-add-feedback/manager-add-feedback.component';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -40,6 +43,8 @@ import { WaiterPopupComponent } from './waiterMain/waiter-popup/waiter-popup.com
     ManagerReportComponent,
     ManagerFeedbackComponent,
     WaiterTableComponent,
+    ManagerFeedDetailComponent,
+    ManagerAddFeedbackComponent,
     WaiterAddDishComponent,
     WaiterDishListComponent,
     WaiterCheckComponent,

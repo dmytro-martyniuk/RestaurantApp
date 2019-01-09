@@ -26,14 +26,15 @@ export class ManagerFeedDetailComponent implements OnInit {
   ngOnInit() {
     this.route.params.subscribe(params => {
       this.id = +params['id '];
-      // console.log(this.id);
+      console.log(this.id);
     });
-    this.getFeedback();
-    this.feedbackService.removefeedback(1);
+    this.allFeedbacks = this.feedbackService.allFeedbacks;
+     this.getFeedback();
+    // this.feedbackService.removefeedback(1);
   }
 
   getFeedback() {
-    this.allFeedbacks = this.feedbackService.getFeedbacks();
+
     console.log(this.allFeedbacks);
     this.feedback = this.allFeedbacks.find(x => x.id == this.id);
     console.log(this.feedback);

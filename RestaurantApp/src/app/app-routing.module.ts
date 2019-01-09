@@ -10,6 +10,7 @@ import { WaiterTableComponent } from './waiterMain/waiter-table/waiter-table.com
 import { ManagerFeedDetailComponent } from './managerMain/manager-feed-detail/manager-feed-detail.component';
 import { WaiterStartZamowienieComponent } from './waiterMain/waiter-start-zamowienie/waiter-start-zamowienie.component';
 import { WaiterZamowienieComponent } from './waiterMain/waiter-zamowienie/waiter-zamowienie.component';
+import { ManagerAddFeedbackComponent } from './managerMain/manager-add-feedback/manager-add-feedback.component';
 import { WaiterAddDishComponent } from './waiterMain/waiter-add-dish/waiter-add-dish.component';
 import { WaiterDishListComponent } from './waiterMain/waiter-dish-list/waiter-dish-list.component';
 import { WaiterCheckComponent } from './waiterMain/waiter-check/waiter-check.component';
@@ -35,7 +36,21 @@ const routes: Routes = [
   { path: 'order', component: WaiterOrderFinishComponent },
   { path: 'waiter-table/:lokalizacja', component: WaiterTableComponent },
   { path: 'manager/feedback/:id ', component: ManagerFeedDetailComponent },
-  { path: 'dish-popup/:id', component: WaiterPopupComponent }
+  { path: 'dish-popup/:id', component: WaiterPopupComponent },
+  { path: 'waiter-table/:lokalizacja', component: WaiterTableComponent},
+  { path: 'new-order', component: WaiterStartZamowienieComponent},
+  { path: 'order-all', component: WaiterZamowienieComponent},
+  { path: 'manager/mgmnt', component:ManagerZarzadComponent },
+  { path: 'manager/report', component:ManagerReportComponent }, 
+  { path: 'manager/feedback', component:ManagerFeedbackComponent },
+  { path: 'waiter-table/:lokalizacja', component: WaiterTableComponent},
+  { path: 'addDish', component: WaiterAddDishComponent},
+  { path: 'dish-list/:type', component: WaiterDishListComponent},
+  { path: 'check', component: WaiterCheckComponent},
+  { path: 'order', component: WaiterOrderFinishComponent},
+  { path: 'waiter-table/:lokalizacja', component: WaiterTableComponent }, 
+  { path: 'manager/feedback/:id ', component: ManagerFeedDetailComponent },
+  { path: 'manager/addfeednack', component: ManagerAddFeedbackComponent }
 ];
 
 @NgModule({
