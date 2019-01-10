@@ -45,7 +45,9 @@ export class ManagerAddFeedbackComponent implements OnInit {
     this.feedback.id = Math.floor((Math.random() * 10000) + 1);
     console.log(this.feedback);
     this.feedbackService.addFeedback(this.feedback);
-    this.router.navigate(['manager'])
+    swal("Świetnie!", "Danie zostało dodane", "success");
+    //this.router.navigate(['/']);
+    setTimeout( () => {this.router.navigate(['/manager']); }, 2000 );
   } 
 
  // this.string = JSON.stringify(feedbackForm.value);

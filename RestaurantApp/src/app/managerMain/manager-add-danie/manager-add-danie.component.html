@@ -4,7 +4,7 @@
       <button (click)="goBack()" class="managerButtonBack">Wróć</button>
     </div>
     <div class="col-8">
-      <h1 class="managerTitle">Dodaj informację1111111</h1>
+      <h1 class="managerTitle">Dodaj danie</h1>
     </div>
     <div class="col-2">
       <button (click)="logOut()" class="managerButtonBack">Wyloguj</button>
@@ -44,11 +44,11 @@
         </div>
 
         <div class="form-group">
-          <label for="alterEgo">Składniki</label>
+          <label for="alterEgo">Cena</label>
           <input type="text" class="form-control" id="alterEgoq" name="cena" [(ngModel)]="cena" required>
         </div>
 
-        <button type="submit" style = ""class="btn btn-success" [disabled]="feedbackForm.invalid">Dodaj informację</button>
+        <button type="submit" class="btn btn-success" [disabled]="feedbackForm.invalid" (click)="alert()">Dodaj danie</button>
 
       </form>
 

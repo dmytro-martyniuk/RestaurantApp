@@ -88,7 +88,7 @@ import { CookService } from './services/cook.service/cook.service';
       InMemoryDataService, { dataEncapsulation: false }
     )
   ],
-  providers: [LoginService, CookieService, TableService, FeedbackService, InMemoryDataService, DanieService,CookService],
+  providers: [LoginService, CookieService, TableService, FeedbackService, InMemoryDataService, DanieService, CookService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

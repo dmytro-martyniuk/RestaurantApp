@@ -44,8 +44,16 @@ export class ManagerAddDanieComponent implements OnInit {
     this.danie.id = Math.floor((Math.random() * 10000) + 1);
     console.log(this.danie);
     this.danieService.addDanie(this.danie);
-    this.router.navigate(['manager'])
-    // this.feedbackService.addFeedback(this.feedback);
-    // this.router.navigate(['manager'])
+    swal("Świetnie!", "Danie zostało dodane", "success");
+    //this.router.navigate(['/']);
+    setTimeout( () => {this.router.navigate(['/manager']); }, 2000 );
+  
   } 
+
+
+  alert() {
+    
+  }
+
+
 }

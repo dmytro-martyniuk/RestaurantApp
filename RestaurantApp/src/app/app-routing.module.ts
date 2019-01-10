@@ -71,7 +71,7 @@ const routes: Routes = [
   { path: 'manager/mngmt/location/L6', component: ManagerZarzStolikL6Component },
   { path: 'manager/menu', component: MenuListComponent},
   { path: 'manager/add/danie', component: ManagerAddDanieComponent},
-  { path: 'manager/danie/:id ', component: ManagerDanieDetailComponent }
+  { path: 'manager/danie/:id ', component: ManagerDanieDetailComponent },
   { path: 'cook', component: CookDashboardComponent}
 ];
 
