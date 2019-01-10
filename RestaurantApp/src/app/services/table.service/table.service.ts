@@ -9,7 +9,6 @@ import { map, filter, catchError, tap } from 'rxjs/operators';
 import { Danie } from 'src/app/classes/Danie';
 import { of } from 'rxjs/internal/observable/of';
 import { DanieZamowienie } from 'src/app/classes/DanieZamowienie';
-import { componentNeedsResolution } from '@angular/core/src/metadata/resource_loading';
 
 @Injectable({
   providedIn: 'root'
@@ -21,10 +20,11 @@ export class TableService {
   daniaZamURL: string = 'api/daniaZam';
   requestedLocalisation: Lokalizacja;
   allZamowienia: Zamowienie[];
+  allDanieZamowienie: DanieZamowienie[];
   currentTable: Stolik;
   currentOrder: Zamowienie;
   allDishes: Danie[];
-  selectedDishes: DanieZamowienie[]=[];
+  selectedDishes: DanieZamowienie[] = [];
 
   constructor(private http: HttpClient) { }
 
@@ -34,15 +34,22 @@ export class TableService {
   }
 
   findZamowienie(table: Stolik): boolean {
+    //TODO
+    //console.log((this.allZamowienia.filter(s => JSON.stringify(s.stolik) === JSON.stringify(table))).length);
     this.currentTable = table;
     if ((this.allZamowienia.filter(s => (JSON.stringify(s.stolik) == JSON.stringify(table)
-      && s.widacStolik == true))).length > 0) {
+      && s.widacStolik === true))).length > 0) {
       this.currentOrder = this.allZamowienia.find(s => (JSON.stringify(s.stolik) == JSON.stringify(table)
-        && s.widacStolik == true));
+        && s.widacStolik === true));
+    
+        this.setSelectedDishes();
       return true;
     } else {
       return false;
     }
+  }
+  setSelectedDishes(){
+    this.selectedDishes = this.allDanieZamowienie.filter(d => this.currentOrder.dania_zamowienia_id.includes(d.id));
   }
   getAllDishes() {
     this.getDishes().subscribe(
@@ -57,9 +64,23 @@ export class TableService {
       );
   }
 
+  getAllDanieZamowienie() {
+    this.getDanieZamowienia().subscribe(
+      data => { this.allDanieZamowienie = data; console.log(this.allDanieZamowienie);}
+    )
+  }
+
+  getDanieZamowienia(): Observable<DanieZamowienie[]> {
+    return this.http.get<DanieZamowienie[]>(this.daniaZamURL)
+      .pipe(
+        tap(_ => console.log('fetched dania zamówienia')),
+        catchError(this.handleError('getAllZamowienie', []))
+      );
+  }
+
   getAllZamowienia() {
     this.getZamowienia().subscribe(
-      data => { this.allZamowienia = data; }
+      data => { this.allZamowienia = data;  console.log(this.allZamowienia);}
     )
   }
 
@@ -81,7 +102,7 @@ export class TableService {
   startNewOrder() {
     let newOrder = new Zamowienie();
     var id = Math.floor((Math.random() * 10000) + 1);
-    newOrder.id = id;
+    newOrder.id = Number(id);
     newOrder.stolik = this.currentTable;
     newOrder.widacStolik = true;
     newOrder.widacKucharz = false;
@@ -100,16 +121,41 @@ export class TableService {
   addSelectedDish(dish: DanieZamowienie){
     this.selectedDishes.push(dish);
     this.currentOrder.dania_zamowienia_id.push(dish.id);
-    this.addSelDish(dish).subscribe(
-      d=>console.log(d)
+   
+  }
+
+  addOrderDB(){
+    this.currentOrder.widacKucharz = true;
+    this.addOrder(this.currentOrder).subscribe(
+      //d=>console.log(d);
     )
   }
 
-  addSelDish (dish: DanieZamowienie): Observable<any> {
+  addOrder(order: Zamowienie): Observable<any> {
+    return this.http.post<DanieZamowienie>(this.zamowienieURL, order)
+      .pipe(
+        tap(_ => console.log('fetched zamówienia')),
+        catchError(this.handleError('getAllZamowienie', []))
+      );
+  }
+  addDishDB(dish:DanieZamowienie){
+    this.addSelDish(dish).subscribe(
+      //d=>console.log(d);
+    )
+  }
+
+  addSelDish(dish: DanieZamowienie): Observable<any> {
     return this.http.post<DanieZamowienie>(this.daniaZamURL, dish)
       .pipe(
         tap(_ => console.log('fetched zamówienia')),
         catchError(this.handleError('getAllZamowienie', []))
       );
+  }
+
+  removeDish(dish:DanieZamowienie){
+    this.selectedDishes = this.selectedDishes.filter(s=> JSON.stringify(s)!== JSON.stringify(dish));
+  }
+  removePD(){
+    this.selectedDishes = this.selectedDishes.filter(s=> !s.przekazano);
   }
 }

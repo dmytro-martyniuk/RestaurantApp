@@ -41,16 +41,29 @@
         <div class="form-group">
           <label for="comment" >Notatka:</label>
           <textarea class="form-control" rows="5" id="comment" (change)="doTextareaValueChange($event)">{{textareaValue}}</textarea>
+          
         </div>
       </form>
     </div>
     <div class="col-2"></div>
   </div>
   <div class="row">
-      <div class="col-3"></div>
+      <div class="col-3">
+      </div>
       <div class="col-7">
           <button type="button" (click)="addDish()" class="managerButtonLogout">Dodaj</button>
       </div>
-      <div class="col-2"></div>
+      <div class="col-2">          
+      </div>
   </div>
+  <div class="row">
+      <div class="col-3">
+      </div>
+      <div class="col-6">
+          <h1 class="managerTitle" *ngIf ='showM'>Dodane</h1>
+      </div>
+      <div class="col-3">          
+      </div>
+  </div>
+  
 </div>

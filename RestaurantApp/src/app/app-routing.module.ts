@@ -26,6 +26,7 @@ import { ManagerZarzStolikL6Component } from './managerMain/manager-zarz-stolik-
 import { MenuListComponent } from './managerMain/menu-list/menu-list.component';
 import { ManagerAddDanieComponent } from './managerMain/manager-add-danie/manager-add-danie.component';
 import { ManagerDanieDetailComponent } from './managerMain/manager-danie-detail/manager-danie-detail.component';
+import { CookDashboardComponent } from './cook/cook-dashboard/cook-dashboard.component';
 
 
 const routes: Routes = [
@@ -71,6 +72,7 @@ const routes: Routes = [
   { path: 'manager/menu', component: MenuListComponent},
   { path: 'manager/add/danie', component: ManagerAddDanieComponent},
   { path: 'manager/danie/:id ', component: ManagerDanieDetailComponent }
+  { path: 'cook', component: CookDashboardComponent}
 ];
 
 @NgModule({

@@ -26,8 +26,6 @@ import { WaiterDishListComponent } from './waiterMain/waiter-dish-list/waiter-di
 import { WaiterCheckComponent } from './waiterMain/waiter-check/waiter-check.component';
 import { WaiterOrderFinishComponent } from './waiterMain/waiter-order-finish/waiter-order-finish.component';
 import { WaiterPopupComponent } from './waiterMain/waiter-popup/waiter-popup.component';
-
-import { HttpModule } from '@angular/http';
 import { ManagerAddFeedbackComponent } from './managerMain/manager-add-feedback/manager-add-feedback.component';
 import { FormsModule } from '@angular/forms';
 import { ManagerZarzStolikComponent } from './managerMain/manager-zarz-stolik/manager-zarz-stolik.component';
@@ -41,9 +39,9 @@ import { DanieService } from './services/danie.service/danie.service';
 import { MenuListComponent } from './managerMain/menu-list/menu-list.component';
 import { DanieDetailComponent } from './managerMain/danie-detail/danie-detail.component';
 import { ManagerAddDanieComponent } from './managerMain/manager-add-danie/manager-add-danie.component';
- import { ManagerDanieDetailComponent } from './managerMain/manager-danie-detail/manager-danie-detail.component';
-
-
+import { ManagerDanieDetailComponent } from './managerMain/manager-danie-detail/manager-danie-detail.component';
+import { CookDashboardComponent } from './cook/cook-dashboard/cook-dashboard.component';
+import { CookService } from './services/cook.service/cook.service';
 
 @NgModule({
   declarations: [
@@ -76,7 +74,8 @@ import { ManagerAddDanieComponent } from './managerMain/manager-add-danie/manage
     MenuListComponent,
     DanieDetailComponent,
     ManagerAddDanieComponent,
-    ManagerDanieDetailComponent
+    ManagerDanieDetailComponent,
+    CookDashboardComponent
   ],
   imports: [
     BrowserModule,
@@ -89,7 +88,7 @@ import { ManagerAddDanieComponent } from './managerMain/manager-add-danie/manage
       InMemoryDataService, { dataEncapsulation: false }
     )
   ],
-  providers: [LoginService, CookieService, TableService, FeedbackService, InMemoryDataService, DanieService],
+  providers: [LoginService, CookieService, TableService, FeedbackService, InMemoryDataService, DanieService,CookService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
