@@ -1,5 +1,7 @@
+import { ShowTimeSk } from './ShowTimeSk';
+
 export class ShowTime{
     id: number;
-    skaldniki: String[];
+    skaldniki: ShowTimeSk[];
 
 }
