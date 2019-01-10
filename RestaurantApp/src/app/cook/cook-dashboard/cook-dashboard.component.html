@@ -12,18 +12,13 @@
    
   
     <div class="row">
-      <div class="col-3 time">
-        asdasd
+      <div class="time" *ngFor="let order of showTime">
+         <h4>Zamównenie {{order.id}}</h4>
+         <ul>
+          <li *ngFor="let skladnik of order.skaldniki" >{{skladnik}}
+            <button  type="button" (click)="ready(order,skladnik)" class="btn btn-success">Gotowe</button>
+          </li>
+        </ul> 
+        <button type="button" class="managerButton" (click)='danieReady(order)'>Danie gotowe</button>
       </div>
-      <div class="col-1"></div>
-      <div class="col-3 time">
-        asdasdas
-      </div>
-      <div class="col-1"></div>
-      <div class="col-3 time">
-sadsad
-      </div>
-      <div class="col-1"></div>
-    </div>
-      
   </div>

@@ -45,10 +45,17 @@ export class CookDashboardComponent implements OnInit {
       let tempNames = this.showDishes
                           .filter(sd=> danieIds.includes(sd.id))
                           .map(s=> s.nazwa);
-      tempNames.forEach(n=> s.skaldniki.push(n));
+      tempNames.forEach(n=> {
+        var sk = {nazwa:n,gotowy:false}
+        s.skaldniki.push(n);
+      })
+      
       console.log(s);
       this.showTime.push(s);
     });  
     console.log(this.showTime);
+  }
+  danieReady(d:ShowTime){
+    this.showTime = this.showTime.filter(s=> s!==d);
   }
 }
