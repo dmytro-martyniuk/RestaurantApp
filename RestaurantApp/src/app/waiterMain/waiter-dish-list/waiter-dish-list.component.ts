@@ -28,7 +28,6 @@ export class WaiterDishListComponent implements OnInit {
   }
 
   addDish(id: number){
-    console.log(id);
     this.router.navigate(['dish-popup/'+id]);
   }
 

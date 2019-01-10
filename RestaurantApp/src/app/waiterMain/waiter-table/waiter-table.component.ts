@@ -24,6 +24,7 @@ export class WaiterTableComponent implements OnInit {
 
   ngOnInit() {
     this.setTables();
+    this.tableService.getAllDanieZamowienie();
     this.tableService.getAllZamowienia();
   }
 

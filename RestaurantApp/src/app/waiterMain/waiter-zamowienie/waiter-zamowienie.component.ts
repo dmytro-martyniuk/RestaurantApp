@@ -19,7 +19,7 @@ export class WaiterZamowienieComponent implements OnInit {
   }
 
   goBack(): void {
-    this.location.back();
+    this.router.navigate(['waiter']);
   }
 
   addDanie():void {

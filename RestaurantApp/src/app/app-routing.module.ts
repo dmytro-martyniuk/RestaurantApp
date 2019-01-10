@@ -16,6 +16,7 @@ import { WaiterDishListComponent } from './waiterMain/waiter-dish-list/waiter-di
 import { WaiterCheckComponent } from './waiterMain/waiter-check/waiter-check.component';
 import { WaiterOrderFinishComponent } from './waiterMain/waiter-order-finish/waiter-order-finish.component';
 import { WaiterPopupComponent } from './waiterMain/waiter-popup/waiter-popup.component';
+import { CookDashboardComponent } from './cook/cook-dashboard/cook-dashboard.component';
 
 
 const routes: Routes = [
@@ -50,7 +51,8 @@ const routes: Routes = [
   { path: 'order', component: WaiterOrderFinishComponent},
   { path: 'waiter-table/:lokalizacja', component: WaiterTableComponent }, 
   { path: 'manager/feedback/:id ', component: ManagerFeedDetailComponent },
-  { path: 'manager/addfeednack', component: ManagerAddFeedbackComponent }
+  { path: 'manager/addfeednack', component: ManagerAddFeedbackComponent },
+  { path: 'cook', component: CookDashboardComponent}
 ];
 
 @NgModule({

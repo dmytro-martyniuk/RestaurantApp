@@ -29,6 +29,8 @@ import { WaiterPopupComponent } from './waiterMain/waiter-popup/waiter-popup.com
 
 import { HttpModule } from '@angular/http';
 import { ManagerAddFeedbackComponent } from './managerMain/manager-add-feedback/manager-add-feedback.component';
+import { CookDashboardComponent } from './cook/cook-dashboard/cook-dashboard.component';
+import { CookService } from './services/cook.service/cook.service';
 
 @NgModule({
   declarations: [
@@ -50,7 +52,8 @@ import { ManagerAddFeedbackComponent } from './managerMain/manager-add-feedback/
     WaiterCheckComponent,
     WaiterOrderFinishComponent,
     ManagerFeedDetailComponent,
-    WaiterPopupComponent
+    WaiterPopupComponent,
+    CookDashboardComponent
   ],
   imports: [
     BrowserModule,
@@ -62,7 +65,7 @@ import { ManagerAddFeedbackComponent } from './managerMain/manager-add-feedback/
       InMemoryDataService, { dataEncapsulation: false }
     )
   ],
-  providers: [LoginService, CookieService, TableService, FeedbackService, InMemoryDataService],
+  providers: [LoginService, CookieService, TableService, CookService, FeedbackService, InMemoryDataService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
