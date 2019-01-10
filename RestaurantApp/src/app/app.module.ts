@@ -30,6 +30,20 @@ import { WaiterPopupComponent } from './waiterMain/waiter-popup/waiter-popup.com
 import { HttpModule } from '@angular/http';
 import { ManagerAddFeedbackComponent } from './managerMain/manager-add-feedback/manager-add-feedback.component';
 import { FormsModule } from '@angular/forms';
+import { ManagerZarzStolikComponent } from './managerMain/manager-zarz-stolik/manager-zarz-stolik.component';
+import { ManagerZarzStolikL1Component } from './managerMain/manager-zarz-stolik-l1/manager-zarz-stolik-l1.component';
+import { ManagerZarzStolikL2Component } from './managerMain/manager-zarz-stolik-l2/manager-zarz-stolik-l2.component';
+import { ManagerZarzStolikL3Component } from './managerMain/manager-zarz-stolik-l3/manager-zarz-stolik-l3.component';
+import { ManagerZarzStolikL4Component } from './managerMain/manager-zarz-stolik-l4/manager-zarz-stolik-l4.component';
+import { ManagerZarzStolikL5Component } from './managerMain/manager-zarz-stolik-l5/manager-zarz-stolik-l5.component';
+import { ManagerZarzStolikL6Component } from './managerMain/manager-zarz-stolik-l6/manager-zarz-stolik-l6.component';
+import { DanieService } from './services/danie.service/danie.service';
+import { MenuListComponent } from './managerMain/menu-list/menu-list.component';
+import { DanieDetailComponent } from './managerMain/danie-detail/danie-detail.component';
+import { ManagerAddDanieComponent } from './managerMain/manager-add-danie/manager-add-danie.component';
+ import { ManagerDanieDetailComponent } from './managerMain/manager-danie-detail/manager-danie-detail.component';
+
+
 
 @NgModule({
   declarations: [
@@ -51,7 +65,18 @@ import { FormsModule } from '@angular/forms';
     WaiterCheckComponent,
     WaiterOrderFinishComponent,
     ManagerFeedDetailComponent,
-    WaiterPopupComponent
+    WaiterPopupComponent,
+    ManagerZarzStolikComponent,
+    ManagerZarzStolikL1Component,
+    ManagerZarzStolikL2Component,
+    ManagerZarzStolikL3Component,
+    ManagerZarzStolikL4Component,
+    ManagerZarzStolikL5Component,
+    ManagerZarzStolikL6Component,
+    MenuListComponent,
+    DanieDetailComponent,
+    ManagerAddDanieComponent,
+    ManagerDanieDetailComponent
   ],
   imports: [
     BrowserModule,
@@ -64,7 +89,7 @@ import { FormsModule } from '@angular/forms';
       InMemoryDataService, { dataEncapsulation: false }
     )
   ],
-  providers: [LoginService, CookieService, TableService, FeedbackService, InMemoryDataService],
+  providers: [LoginService, CookieService, TableService, FeedbackService, InMemoryDataService, DanieService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

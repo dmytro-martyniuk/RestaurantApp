@@ -2,6 +2,9 @@ import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { Location, NgForOf } from '@angular/common';
 import { NgForm } from '@angular/forms'
+import { Feedback } from 'src/app/classes/feedback';
+import { Observable } from 'rxjs';
+import { FeedbackService } from 'src/app/services/feedback.service/feedback.service';
 
 @Component({
   selector: 'manager/addfeednack',
@@ -12,7 +15,12 @@ export class ManagerAddFeedbackComponent implements OnInit {
 
   constructor(
     private location: Location, 
-    private router: Router ) { }
+    private router: Router,
+    public feedbackService: FeedbackService ) { }
+
+    feedbackURL :string  = "api/feedbacks";
+    feedback: Feedback;
+    string : String;
 
   ngOnInit() {
   }
@@ -30,8 +38,19 @@ export class ManagerAddFeedbackComponent implements OnInit {
   } 
 
   onClickSubmit(feedbackForm: NgForm): void {
-    console.log(feedbackForm.value);
-      
-  }
+    //console.log(feedbackForm.value);
+   
+    this.feedback = feedbackForm.value;
+    
+    this.feedback.id = Math.floor((Math.random() * 10000) + 1);
+    console.log(this.feedback);
+    this.feedbackService.addFeedback(this.feedback);
+    this.router.navigate(['manager'])
+  } 
+
+ // this.string = JSON.stringify(feedbackForm.value);
+    //console.log(this.string);
+    //feedback = new Feedback(feedbackForm.value);
+   // this.feedbackService.addFeedback(feedbackForm.value);
 
 }

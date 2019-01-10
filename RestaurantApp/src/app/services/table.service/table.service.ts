@@ -96,6 +96,7 @@ export class TableService {
   findDishById(dishId: string): Danie {
     return this.allDishes.find(d => JSON.stringify(Number(dishId)) == JSON.stringify(d.id));
   }
+  
   addSelectedDish(dish: DanieZamowienie){
     this.selectedDishes.push(dish);
     this.currentOrder.dania_zamowienia_id.push(dish.id);

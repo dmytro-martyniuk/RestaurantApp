@@ -1,0 +1,71 @@
+<div class="container">
+  <div class="row">
+    <div class="col-2">
+      <button (click)="goBack()" class="managerButtonBack">Wróć</button>
+    </div>
+    <div class="col-8">
+      <h1 class="managerTitle">Informacja zwrotna</h1>
+    </div>
+    <div class="col-2">
+      <button (click)="logOut()" class="managerButtonBack">Wyloguj</button>
+    </div>
+  </div>
+
+  <!-- <div class="row">
+    <div class="col-2"></div>
+    <div class="col-8 backgroundDiv">
+      <p>Temat: {{feedback.topic}}</p>
+      <p>Typ: {{feedback.type}}</p>
+      <p>Treść: {{feedback.description}}</p>
+    </div>
+    <div class="col-2"></div>
+  </div> -->
+
+  <div class="row" style="margin-top:50px;">
+    <div class="col-2"></div>
+    <div class="col-8">
+      <div class="card">
+        <div class="card-header">
+          {{danie.nazwa}}
+        </div>
+        <div class="card-body">
+          <blockquote class="blockquote mb-0">
+            <h3>{{danie.opis}}</h3>
+            <p>Składniki: {{danie.skladniki}}</p>
+
+            <footer class="blockquote-footer">Cena: {{danie.cena}}</footer>
+          </blockquote>
+        </div>
+      </div>
+
+      <!-- <form #feedbackForm = "ngForm" (ngSubmit)="onClickSubmit(feedbackForm)">
+
+        <div class="form-group">
+          <label for="alterEgo">Nazwa</label>
+          <input type="text" class="form-control" name="nazwa" id="nazwa" [(ngModel)]="nazwa" required >
+        </div>
+
+        <div class="form-group">
+          <label for="alterEgo">Opis</label>
+          <textarea class="form-control" id="exampleTextarea" rows="3" name="opis" [(ngModel)]="opis" required></textarea>
+        </div>
+
+        <div class="form-group">
+          <label for="alterEgo">Składniki</label>
+          <textarea class="form-control" id="exampleTextarea" rows="3" name="skladniki" [(ngModel)]="skladniki" required></textarea>
+        </div>
+
+        <div class="form-group">
+          <label for="alterEgo">Składniki</label>
+          <input type="text" class="form-control" id="alterEgoq" name="cena" [(ngModel)]="cena" required>
+        </div>
+
+        <button type="submit" style = ""class="btn btn-success" [disabled]="feedbackForm.invalid">Dodaj informację</button>
+
+      </form> -->
+
+    </div>
+    <div class="col-2"></div>
+  </div>
+
+</div>

@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Location } from '@angular/common';
 import { Router } from '@angular/router';
+import swal from 'sweetalert';
 
 
 @Component({
@@ -24,5 +25,9 @@ export class ManagerReportComponent implements OnInit {
 
   logOut() {
     this.router.navigate(['/']);
+  }
+
+  popup(){
+  swal("Cudownie!", "Raporty zostały wygenerowane", "success");
   }
 }

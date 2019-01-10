@@ -22,7 +22,7 @@ export class FeedbackService {
   allFeedbacks: Feedback [];
   
   ngOnInit() {
-    console.log("init in service");
+    
 
   }
 
@@ -52,6 +52,21 @@ export class FeedbackService {
       // Let the app keep running by returning an empty result.
       return of(result as T);
     };
+  }
+
+  
+  addFeedback(feedback: Feedback){
+      this.addFeedbackToDB(feedback).subscribe(
+      d=>console.log(d)
+    )
+  }
+
+  addFeedbackToDB(feedback: Feedback): Observable<any> {
+    return this.http.post<Feedback>(this.feedbackURL, feedback)
+    .pipe(
+      tap(_ => console.log('added feedback to db')),
+      catchError(this.handleError('getAllZamowienie', []))
+    );
   }
 
 }

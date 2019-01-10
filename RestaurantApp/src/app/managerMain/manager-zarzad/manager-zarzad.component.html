@@ -13,12 +13,16 @@
 
 
     <div class="row" style="margin-top: 50px">
-        <div class="col-3">
+        <div class="col-4">
             <h2 class="TerminTitle">Wybierz termin: </h2>
         </div>
-        <div class="col-8">
+        <div class="col-3">
             <angular2-date-picker (onDateSelect)="onDateSelect($event)" [(ngModel)]="date" [settings]="settings">
             </angular2-date-picker>
+        </div>
+
+        <div class="col-3">
+            <button (click)="nextPage()" class="managerButtonNext" style="margin-top: 0 px">Dalej</button>
         </div>
     </div>
 

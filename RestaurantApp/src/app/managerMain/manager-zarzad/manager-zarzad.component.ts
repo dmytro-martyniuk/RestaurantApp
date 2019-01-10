@@ -38,4 +38,7 @@ export class ManagerZarzadComponent implements OnInit {
     console.log(this.date);
   }
 
+  nextPage() {
+    this.router.navigate(['manager/mngmt/location']);
+  }
 }

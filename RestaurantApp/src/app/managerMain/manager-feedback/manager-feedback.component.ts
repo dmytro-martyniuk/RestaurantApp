@@ -32,8 +32,10 @@ export class ManagerFeedbackComponent implements OnInit {
     //this.allFeedbacks = this.feedbackService.getFeedbacks();
     //this.feedbacks = this.inMemoryDataService.createDb().feedbacks;
     //this.getAllFeedbacks();
+    
     this.allFeedbacks = this.feedbackService.allFeedbacks;
      //this. getInfo();
+     
   }
 
   logOut() {

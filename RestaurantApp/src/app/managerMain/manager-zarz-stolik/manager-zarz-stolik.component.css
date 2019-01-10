@@ -6,11 +6,6 @@
     margin-top: 50px;
 }
 
-.TerminTitle{
-    color: #85592e;
-    font-size: 30px;
-}
-
 .btn{
     margin-top: 50px;
     /* margin-left: 700px; */
@@ -18,11 +13,10 @@
     border: none;
 }
 
-.managerButton{
+.managerButton {
 	-moz-box-shadow:inset 0px 1px 0px 0px #ffffff;
     -webkit-box-shadow:inset 0px 1px 0px 0px #ffffff;
-    width: 80%;
-    height:40%;
+    width: 70%;
 	box-shadow:inset 0px 1px 0px 0px #ffffff;
 	background:-webkit-gradient(linear, left top, left bottom, color-stop(0.05, #f9f9f9), color-stop(1, #e9e9e9));
 	background:-moz-linear-gradient(top, #f9f9f9 5%, #e9e9e9 100%);
@@ -40,14 +34,13 @@
 	cursor:pointer;
 	color:#666666;
 	font-family:Arial;
-	font-size:15px;
+	font-size:20px;
     font-weight:bold;
     text-align: center;
-    
-    margin-top: 50px;
-    margin-left: 45px;
-    margin-bottom: 80px;
-	/* padding:32px 76px; */
+    margin-left: 70px;
+    margin-top: 80px;
+
+	padding:32px 76px;
 	text-decoration:none;
 	text-shadow:0px 1px 0px #ffffff;
 }
@@ -67,9 +60,7 @@
 }
 
 
-
-
-.managerButtonNext{
+.managerButtonMain{
 	-moz-box-shadow:inset 0px 1px 0px 0px #ffffff;
     -webkit-box-shadow:inset 0px 1px 0px 0px #ffffff;
     width: 80%;
@@ -95,14 +86,14 @@
     font-weight:bold;
     text-align: center;
     
-
+    margin-top: 50px;
     margin-left: 45px;
     margin-bottom: 80px;
 	/* padding:32px 76px; */
 	text-decoration:none;
 	text-shadow:0px 1px 0px #ffffff;
 }
-.managerButtonNext:hover {
+.managerButtonMain:hover {
 	background:-webkit-gradient(linear, left top, left bottom, color-stop(0.05, #e9e9e9), color-stop(1, #f9f9f9));
 	background:-moz-linear-gradient(top, #e9e9e9 5%, #f9f9f9 100%);
 	background:-webkit-linear-gradient(top, #e9e9e9 5%, #f9f9f9 100%);
@@ -112,7 +103,7 @@
 	filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#e9e9e9', endColorstr='#f9f9f9',GradientType=0);
 	background-color:#e9e9e9;
 }
-.managerButtonNext:active {
+.managerButtonMain:active {
 	position:relative;
 	top:1px;
 }

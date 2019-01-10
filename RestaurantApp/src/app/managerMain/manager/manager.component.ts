@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { CookieService } from 'ngx-cookie-service';
 import { Router } from '@angular/router';
 import { FeedbackService } from 'src/app/services/feedback.service/feedback.service';
+import { DanieService } from 'src/app/services/danie.service/danie.service';
 
 
 @Component({
@@ -14,7 +15,8 @@ export class ManagerComponent implements OnInit {
   constructor(
     private cookieService: CookieService,
     private router: Router,
-    private feedbackservice: FeedbackService) { }
+    private feedbackservice: FeedbackService,
+    private danieService: DanieService) { }
 
   ngOnInit() {
     if(this.cookieService.get("user")!='manager'){
@@ -22,6 +24,7 @@ export class ManagerComponent implements OnInit {
     }
 
     this.feedbackservice.getAllFeedbacks();
+    this.danieService.getAllDania();
   }
 
   logout() {
