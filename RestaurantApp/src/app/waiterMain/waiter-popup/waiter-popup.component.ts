@@ -40,12 +40,12 @@ export class WaiterPopupComponent implements OnInit {
 
   addDish() {
     this.showM = true;
-    setTimeout(() => {
-      var idd = Math.floor((Math.random() * 10000) + 1);
-      let s = { id: idd, danie_id: Number(this.dishId), ilosc: Number(this.selectedOption), uwaga: this.textareaValue, nazwa: this.selectedDish.nazwa, cena: this.selectedDish.cena, przekazano:false, zaplacono: false };
-      this.tableService.addSelectedDish(s);
-      this.location.back();
-    }, 500);
+    swal("Gotowe!", "Danie dodane", "success");
+    var idd = Math.floor((Math.random() * 10000) + 1);
+    let s = { id: idd, danie_id: Number(this.dishId), ilosc: Number(this.selectedOption), uwaga: this.textareaValue, nazwa: this.selectedDish.nazwa, cena: this.selectedDish.cena, przekazano: false, zaplacono: false };
+    this.tableService.addSelectedDish(s);
+    this.location.back();
+    this.location.back();
   }
 
 }
