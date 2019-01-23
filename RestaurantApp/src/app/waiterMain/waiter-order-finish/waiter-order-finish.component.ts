@@ -11,31 +11,48 @@ import { DanieZamowienie } from 'src/app/classes/DanieZamowienie';
 })
 export class WaiterOrderFinishComponent implements OnInit {
 
-  selectedDishes:DanieZamowienie[];
-  constructor(public tableService: TableService, private router: Router, private location:Location) { }
+  selectedDishes: DanieZamowienie[];
+  constructor(public tableService: TableService, private router: Router, private location: Location) { }
 
   ngOnInit() {
     this.selectedDishes = this.tableService.selectedDishes;
-    this.selectedDishes = this.selectedDishes.filter(d=> !d.przekazano);
+    this.selectedDishes = this.selectedDishes.filter(d => !d.przekazano);
   }
 
   goBack(): void {
     this.location.back();
   }
 
-  reomveDish(dish:DanieZamowienie){
+  reomveDish(dish: DanieZamowienie) {
 
     this.selectedDishes = this.selectedDishes.filter(obj => obj !== dish);
     this.tableService.selectedDishes = this.selectedDishes;
   }
 
-  forwardOrder(){
-    this.selectedDishes.forEach(d=>{
-      d.przekazano = true;
-      this.tableService.addDishDB(d);
-    });
-    this.tableService.addOrderDB();
-    this.location.back();
+  forwardOrder() {
+    swal({
+      title: "Przekazać do kucharza?",
+      text: "Po przekazaniu nie można będzie zmieniać dania!",
+      icon: "warning",
+      buttons: true,
+      dangerMode: true,
+    })
+      .then((willDelete) => {
+        if (willDelete) {
+          this.selectedDishes.forEach(d => {
+            d.przekazano = true;
+            this.tableService.addDishDB(d);
+          });
+          this.tableService.addOrderDB();
+          this.selectedDishes = [];
+          swal("Zamówienie przekazane!", {
+            icon: "success",
+          });
+        } else {
+          swal("Zamówienie nie przekazane!");
+        }
+      });
+
   }
 
 }
