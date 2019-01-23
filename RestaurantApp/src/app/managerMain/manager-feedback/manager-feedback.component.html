@@ -12,9 +12,21 @@
   </div>
 
   <div class="row">
+    <div class="col-3">
+    </div>
+    <div class="col-6">
+      <button (click)="goToAddFeedback()" class="generateReprotButton">Dodaj nową informacje</button>
+    </div>
+    <div class="col-3">
+    </div>
+  </div>
+
+
+  <div class="row">
     <div class="col-2"></div>
     <div class="col-8">
-      <ul class="list-group" style="margin-top:50px; font-size:17pt; background: #fdfbfbd8; ">
+        <h3 class="managerTitle1">Informacja od klientów:</h3>
+      <ul class="list-group" style="margin-top:10px; font-size:17pt; background: #fdfbfbd8; ">
         <li class="list-group-item" *ngFor="let feedback of allFeedbacks" routerLink="/manager/feedback/{{feedback.id}}">
           <p>{{feedback.topic}} </p>
         </li>
@@ -24,14 +36,5 @@
   </div>
 
   
-  <div class="row">
-      <div class="col-3">
-      </div>
-      <div class="col-6">
-        <button (click)="goToAddFeedback()" class="generateReprotButton">Dodaj Informacje</button>
-      </div>
-      <div class="col-3">
-      </div>
-    </div>
-
+ 
 </div>
