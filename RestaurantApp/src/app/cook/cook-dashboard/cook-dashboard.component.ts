@@ -56,22 +56,22 @@ export class CookDashboardComponent implements OnInit {
     console.log(this.showTime);
   }
   danieReady(d:ShowTime){
-    swal({
-      title: "Czy danie gotowe?",
-      icon: "warning",
-      buttons: true,
-      dangerMode: true,
-    })
-      .then((willDelete) => {
-        if (willDelete) {
-          this.showTime = this.showTime.filter(s=> s!==d);
-          swal("Danie gotowe!", {
-            icon: "success",
-          });
-        } else {
-          swal("Danie nie gotowe!");
-        }
-      });
+    // swal({
+    //   title: "Czy danie gotowe?",
+    //   icon: "warning",
+    //   buttons: true,
+    //   dangerMode: true,
+    // })
+    //   .then((willDelete) => {
+    //     if (willDelete) {
+    //       this.showTime = this.showTime.filter(s=> s!==d);
+    //       swal("Danie gotowe!", {
+    //         icon: "success",
+    //       });
+    //     } else {
+    //       swal("Danie nie gotowe!");
+    //     }
+    //   });
 
   }
 }

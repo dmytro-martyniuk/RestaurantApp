@@ -35,23 +35,23 @@ export class WaiterCheckComponent implements OnInit {
   pAll() {
     this.selectedDishes.forEach(s => s.zaplacono = true);
     this.tableService.removePD();
-    swal({
-      title: "Klient zapłacił za wszystko?",
-      icon: "warning",
-      buttons: true,
-      dangerMode: true,
-    })
-      .then((willDelete) => {
-        if (willDelete) {
-          this.location.back();
-          swal("Za wszystko zapłacono", {
-            icon: "success",
-          });
-        } else {
-          swal("Klient nie zapłacił za wszystko!");
-        }
-      });
-    //this.tableService.updateAll();
+    // swal({
+    //   title: "Klient zapłacił za wszystko?",
+    //   icon: "warning",
+    //   buttons: true,
+    //   dangerMode: true,
+    // })
+    //   .then((willDelete) => {
+    //     if (willDelete) {
+    //       this.location.back();
+    //       swal("Za wszystko zapłacono", {
+    //         icon: "success",
+    //       });
+    //     } else {
+    //       swal("Klient nie zapłacił za wszystko!");
+    //     }
+    //   });
+    this.tableService.updateAll();
   }
 
   endO() {
